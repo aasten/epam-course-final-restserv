@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/ProductSpecifications"
+        xmlns:tns="http://www.example.com/ProductSpecifications">
+
+<simpleType name="PropName">
+    <restriction base="string" />
+</simpleType>
+<simpleType name="PropValue">
+    <restriction base="string" />
+</simpleType>
+
+<complexType name="Specification">
+    <sequence>
+        <element name="propName" type="tns:PropName" />
+        <element name="propValue" type="tns:PropValue" />
+    </sequence>
+</complexType>
+
+</schema>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/ProductEntry"
+        xmlns:tns="http://www.example.com/ProductEntry">
+
+
+    <import namespace="http://www.example.com/ProductSpecification" schemaLocation="ProductSpeficiations.xsd"
+    xmlns:ps="http://www.example.com/ProductSpecification"/>
+
+    <simpleType name="Name">
+        <restriction base="string"/>
+    </simpleType>
+
+    <simpleType name="ImgURL">
+        <restriction base="string"/>
+    </simpleType>
+
+    <simpleType name="Price">
+        <restriction base="decimal">
+            <fractionDigits value="2" />
+        </restriction>
+    </simpleType>
+
+    <complexType name="ProductEntry">
+        <sequence>
+            <element name="produc"
+        </sequence>
+    </complexType>
+
+    <element name="ProductEntry" type="tns:"
+
+    <complexType name="ChocolateCandyIngredients">
+        <complexContent>
+            <extension base="tns:BaseCandyIngredients">
+                <sequence>
+                    <element name="chocolateKind" type="tns:ChocolateKind" minOccurs="1" maxOccurs="1">
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="NonChocolateCandyIngredients">
+        <complexContent>
+            <extension base="tns:BaseCandyIngredients" />
+        </complexContent>
+    </complexType>
+
+
+    <!-- Overriding MassValue to use only "mg" from enumerated values -->
+    <complexType name="ForcedMgMassValue">
+        <complexContent>
+            <restriction base="ms:MassValue"> <!--type got from inclusion -->
+                <attribute name="unit" type="ms:MassUnit" use="required"
+                           fixed="mg">
+                </attribute>
+            </restriction>
+        </complexContent>
+    </complexType>
+
+
+</schema>
