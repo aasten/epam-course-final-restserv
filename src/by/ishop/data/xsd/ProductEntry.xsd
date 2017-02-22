@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/ProductEntry"
-        xmlns:tns="http://www.example.com/ProductEntry">
+        xmlns:tns="http://www.example.com/ProductEntry" xmlns:ps="http://www.example.com/ProductSpecifications">
 
 
-    <import namespace="http://www.example.com/ProductSpecification" schemaLocation="ProductSpeficiations.xsd"
-    xmlns:ps="http://www.example.com/ProductSpecification"/>
+    <import namespace="http://www.example.com/ProductSpecifications" schemaLocation="ProductSpeficiations.xsd" />
 
     <simpleType name="Name">
         <restriction base="string"/>
@@ -22,39 +21,11 @@
 
     <complexType name="ProductEntry">
         <sequence>
-            <element name="produc"
+            <element name="name" type="tns:Name" />
+            <element name="imgURL" type="tns:ImgURL" />
+            <element name="price" type="tns:Price" />
+            <element name="characteristics" maxOccurs="unbounded" type="ps:Specification" />
         </sequence>
-    </complexType>
-
-    <element name="ProductEntry" type="tns:"
-
-    <complexType name="ChocolateCandyIngredients">
-        <complexContent>
-            <extension base="tns:BaseCandyIngredients">
-                <sequence>
-                    <element name="chocolateKind" type="tns:ChocolateKind" minOccurs="1" maxOccurs="1">
-                    </element>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
-
-    <complexType name="NonChocolateCandyIngredients">
-        <complexContent>
-            <extension base="tns:BaseCandyIngredients" />
-        </complexContent>
-    </complexType>
-
-
-    <!-- Overriding MassValue to use only "mg" from enumerated values -->
-    <complexType name="ForcedMgMassValue">
-        <complexContent>
-            <restriction base="ms:MassValue"> <!--type got from inclusion -->
-                <attribute name="unit" type="ms:MassUnit" use="required"
-                           fixed="mg">
-                </attribute>
-            </restriction>
-        </complexContent>
     </complexType>
 
 
