@@ -38,6 +38,7 @@
 				<version>2.2</version>
 				<configuration>
 					<server>TomcatServer</server>
+					<port>9000</port>
 					<path>/ishop</path>
 				</configuration>
 				<!--<configuration>-->
