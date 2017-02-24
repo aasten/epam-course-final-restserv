@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/ProductEntry"
-        xmlns:tns="http://www.example.com/ProductEntry" xmlns:ps="http://www.example.com/ProductSpecifications">
+        xmlns:tns="http://www.example.com/ProductEntry" xmlns:ps="http://www.example.com/ProductSpecifications"
+        elementFormDefault="qualified" attributeFormDefault="unqualified"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        jaxb:version="1.0" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+        jaxb:extensionBindingPrefixes="xjc">
+    <annotation>
+        <appinfo>
+            <jaxb:globalBindings>
+                <jaxb:serializable/>
+                <xjc:simple />
+            </jaxb:globalBindings>
+        </appinfo>
+    </annotation>
 
 
     <import namespace="http://www.example.com/ProductSpecifications" schemaLocation="ProductSpeficiations.xsd" />
@@ -27,6 +39,8 @@
             <element name="characteristics" maxOccurs="unbounded" type="ps:Specification" />
         </sequence>
     </complexType>
+
+    <element name="productEntry" type="tns:ProductEntry" />
 
 
 </schema>
