@@ -3,7 +3,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import by.ishop.data.product.ProductEntry;
-import by.ishop.data.product.TestFactory;
+import by.ishop.data.TestFactory;
 
 @Path("/")
 public class RESTMain {

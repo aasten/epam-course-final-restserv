@@ -2,6 +2,7 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/ProductEntry"
         xmlns:tns="http://www.example.com/ProductEntry" xmlns:ps="http://www.example.com/ProductSpecifications"
         elementFormDefault="qualified" attributeFormDefault="unqualified"
+        xmlns:ish="http://soapservice.ishop.by/"
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
         jaxb:version="1.0" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
         jaxb:extensionBindingPrefixes="xjc">
@@ -16,6 +17,7 @@
 
 
     <import namespace="http://www.example.com/ProductSpecifications" schemaLocation="ProductSpeficiations.xsd" />
+    <import namespace="http://soapservice.ishop.by/" schemaLocation="http://localhost:7000/soapservice/pricing?xsd=1"/>
 
     <simpleType name="Name">
         <restriction base="string"/>
@@ -35,7 +37,7 @@
         <sequence>
             <element name="name" type="tns:Name" />
             <element name="imgURL" type="tns:ImgURL" />
-            <element name="price" type="tns:Price" />
+            <element name="price" type="ish:entryPrice" />
             <element name="characteristics" maxOccurs="unbounded" type="ps:Specification" />
         </sequence>
     </complexType>

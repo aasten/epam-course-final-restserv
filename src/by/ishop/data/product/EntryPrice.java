@@ -9,24 +9,25 @@
 package by.ishop.data.product;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Specification complex type.
+ * <p>Java class for entryPrice complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Specification"&gt;
+ * &lt;complexType name="entryPrice"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="propName" type="{http://www.example.com/ProductSpecifications}PropName"/&gt;
- *         &lt;element name="propValue" type="{http://www.example.com/ProductSpecifications}PropValue"/&gt;
+ *         &lt;element name="currencyCodeISO4217" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,65 +37,64 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Specification", namespace = "http://www.example.com/ProductSpecifications", propOrder = {
-    "propName",
-    "propValue"
+@XmlType(name = "entryPrice", propOrder = {
+    "currencyCodeISO4217",
+    "value"
 })
-public class Specification
+@XmlRootElement(name = "entryPrice")
+public class EntryPrice
     implements Serializable
 {
 
-    @XmlElement(required = true)
-    protected String propName;
-    @XmlElement(required = true)
-    protected String propValue;
+    protected String currencyCodeISO4217;
+    protected BigDecimal value;
 
     /**
-     * Gets the value of the propName property.
+     * Gets the value of the currencyCodeISO4217 property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getPropName() {
-        return propName;
+    public String getCurrencyCodeISO4217() {
+        return currencyCodeISO4217;
     }
 
     /**
-     * Sets the value of the propName property.
+     * Sets the value of the currencyCodeISO4217 property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setPropName(String value) {
-        this.propName = value;
+    public void setCurrencyCodeISO4217(String value) {
+        this.currencyCodeISO4217 = value;
     }
 
     /**
-     * Gets the value of the propValue property.
+     * Gets the value of the value property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link BigDecimal }
      *     
      */
-    public String getPropValue() {
-        return propValue;
+    public BigDecimal getValue() {
+        return value;
     }
 
     /**
-     * Sets the value of the propValue property.
+     * Sets the value of the value property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link BigDecimal }
      *     
      */
-    public void setPropValue(String value) {
-        this.propValue = value;
+    public void setValue(BigDecimal value) {
+        this.value = value;
     }
 
 }

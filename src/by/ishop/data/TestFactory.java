@@ -1,5 +1,8 @@
-package by.ishop.data.product;
+package by.ishop.data;
 
+import by.ishop.data.product.EntryPrice;
+import by.ishop.data.product.ProductEntry;
+import by.ishop.data.product.Specification;
 import by.ishop.soapservice.NoEntryPricingInfo_Exception;
 import by.ishop.soapservice.PricingEndpoint_Service;
 
@@ -13,13 +16,15 @@ public class TestFactory {
     private static PricingEndpoint_Service service = new PricingEndpoint_Service();
     public static ProductEntry createTestEntry(String id) {
         // test exception for every odd invocation
-        if(flipflop ^= true) id = "-1";
+//        if(flipflop ^= true) id = "-1";
 
         ProductEntry p = new ProductEntry();
         p.setName("Canon EOS 5D");
         p.setImgURL("/img/canon.png");
         try {
-            p.setPrice(service.getPricingEndpointPort().getEntryPrice(id).getValue());
+            p.setPrice(new EntryPrice());
+            p.getPrice().setCurrencyCodeISO4217(service.getPricingEndpointPort().getEntryPrice(id).getCurrencyCodeISO4217());
+            p.getPrice().setValue(service.getPricingEndpointPort().getEntryPrice(id).getValue());
         } catch (NoEntryPricingInfo_Exception e) {
             throw new RuntimeException(e);
         }
