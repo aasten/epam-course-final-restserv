@@ -67,7 +67,7 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
-							<!-- Needed with JAXP 1.5 -->
+							<!-- Needed with JAXP 1.5 for access xsd via http-->
 							<vmArgs>
 								<vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
 							</vmArgs>

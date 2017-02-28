@@ -27,7 +27,7 @@ public interface PricingEndpoint {
 
     /**
      * 
-     * @param arg0
+     * @param entryId
      * @return
      *     returns by.ishop.soapservice.EntryPrice
      * @throws NoEntryPricingInfo_Exception
@@ -38,8 +38,8 @@ public interface PricingEndpoint {
         @FaultAction(className = NoEntryPricingInfo_Exception.class, value = "http://soapservice.ishop.by/PricingEndpoint/getEntryPrice/Fault/NoEntryPricingInfo")
     })
     public EntryPrice getEntryPrice(
-        @WebParam(name = "arg0", partName = "arg0")
-        String arg0)
+        @WebParam(name = "entryId", partName = "entryId")
+        String entryId)
         throws NoEntryPricingInfo_Exception
     ;
 
