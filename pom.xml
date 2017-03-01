@@ -111,7 +111,7 @@
 				</executions>
 				<configuration>
 					<sources>
-						<source>${basedir}/src/main/java/by/ishop/data/xsd/ProductEntry.xsd</source>
+						<source>${basedir}/src/main/resources/ProductEntry.xsd</source>
 					</sources>
 					<outputDirectory>${basedir}/src/main/java/</outputDirectory>
 					<!-- important !!!  clearOutputDir must be false to prevent deleting of main sources dir src/  -->
