@@ -4,9 +4,9 @@ import by.ishop.data.product.ProductEntry;
 public enum DataAccess {
     INSTANCE;
 
-    private DAO<ProductEntry, Long> entryDAO = new JPADAOProductEntry();
+    private DAO<ProductEntry, Integer> entryDAO = new JPADAOProductEntry();
 
-    public DAO<ProductEntry, Long> getEntryDAO() {
+    public DAO<ProductEntry, Integer> getEntryDAO() {
         return entryDAO;
     }
 }
