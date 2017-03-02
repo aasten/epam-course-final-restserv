@@ -27,9 +27,11 @@
         <restriction base="string"/>
     </simpleType>
 
-    <simpleType name="Price">
+    <simpleType name="Rate">
         <restriction base="decimal">
-            <fractionDigits value="2" />
+            <maxInclusive value="5" />
+            <minInclusive value="0" />
+            <fractionDigits value="1" />
         </restriction>
     </simpleType>
 
@@ -38,6 +40,7 @@
             <element name="name" type="tns:Name" />
             <element name="imgURL" type="tns:ImgURL" />
             <element name="price" type="ish:entryPrice" />
+            <element name="rate" type="tns:Rate" />
             <element name="characteristics" maxOccurs="unbounded" type="ps:Specification" />
         </sequence>
     </complexType>

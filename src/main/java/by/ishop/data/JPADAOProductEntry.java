@@ -36,7 +36,7 @@ public class JPADAOProductEntry implements DAO<ProductEntry, Integer> {
                 transaction.rollback();
             }
             // TODO slf4j
-            e.printStackTrace();
+//            e.printStackTrace();
             throw new RuntimeException(e);
         } finally {
             manager.close();
@@ -47,6 +47,7 @@ public class JPADAOProductEntry implements DAO<ProductEntry, Integer> {
         ProductEntry p = new ProductEntry();
         p.setImgURL(pe.getImgURL());
         p.setName(pe.getName());
+        p.setRate(pe.getRate());
         return p;
     }
 
