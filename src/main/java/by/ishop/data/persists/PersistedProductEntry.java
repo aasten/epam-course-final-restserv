@@ -3,12 +3,14 @@ package by.ishop.data.persists;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
 /**
  * Created by sten on 01.03.17.
  */
 @Entity
+@Table(name = "productEntry")
 public class PersistedProductEntry {
 
     @Id
@@ -47,8 +49,6 @@ public class PersistedProductEntry {
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
     }
-
-
 
     public BigDecimal getRate() {
         return rate;
