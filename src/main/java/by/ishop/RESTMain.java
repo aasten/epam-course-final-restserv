@@ -22,9 +22,11 @@ public class RESTMain {
             return DataAccess.INSTANCE.getEntryDAO().getById(numId);
 //            return TestFactory.createTestEntry(id);
         } catch(NumberFormatException e) {
-            throw new WebApplicationException(e.getMessage(),Response.Status.BAD_REQUEST);
+            throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST).entity(
+                    e.getMessage()).build());
         } catch(RuntimeException e) {
-            throw new WebApplicationException(Response.Status.NOT_FOUND);
+            throw new WebApplicationException(Response.status(Response.Status.NOT_FOUND).entity(
+                    "Product " + id + " not found").build());
         }
     }
 
