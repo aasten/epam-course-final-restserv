@@ -5,7 +5,6 @@ import javax.ws.rs.core.Response;
 
 import by.ishop.data.DataAccess;
 import by.ishop.data.product.ProductEntry;
-import by.ishop.data.TestFactory;
 
 @Path("/")
 public class RESTMain {

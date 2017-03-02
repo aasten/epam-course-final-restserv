@@ -68,6 +68,7 @@
 		</dependency>
 
 	</dependencies>
+
 	<build>
 		<sourceDirectory>src/</sourceDirectory>
 		<finalName>ishop</finalName>
