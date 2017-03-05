@@ -23,8 +23,8 @@ public class NoEntryPricingInfo_Exception
 
     /**
      * 
-     * @param message
      * @param faultInfo
+     * @param message
      */
     public NoEntryPricingInfo_Exception(String message, NoEntryPricingInfo faultInfo) {
         super(message);
@@ -33,9 +33,9 @@ public class NoEntryPricingInfo_Exception
 
     /**
      * 
-     * @param message
      * @param faultInfo
      * @param cause
+     * @param message
      */
     public NoEntryPricingInfo_Exception(String message, NoEntryPricingInfo faultInfo, Throwable cause) {
         super(message, cause);
