@@ -64,6 +64,7 @@ public class JPADAOProductEntry implements DAO<ProductEntry, Integer> {
 
     private static ProductEntry persistedToDTO(PersistedProductEntry pe) {
         ProductEntry p = new ProductEntry();
+        p.setId(pe.getId());
         p.setImgURL(pe.getImgURL());
         p.setName(pe.getName());
         p.setRate(pe.getRate());

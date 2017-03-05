@@ -19,6 +19,10 @@
     <import namespace="http://www.example.com/ProductSpecifications" schemaLocation="ProductSpeficiations.xsd" />
     <import namespace="http://soapservice.ishop.by/" schemaLocation="http://localhost:7000/soapservice/pricing?xsd=1"/>
 
+    <simpleType name="Id">
+        <restriction base="unsignedInt"/>
+    </simpleType>
+
     <simpleType name="Name">
         <restriction base="string"/>
     </simpleType>
@@ -37,6 +41,7 @@
 
     <complexType name="ProductEntry">
         <sequence>
+            <element name="id" type="tns:Id" />
             <element name="name" type="tns:Name" />
             <element name="imgURL" type="tns:ImgURL" />
             <element name="price" type="ish:entryPrice" />
